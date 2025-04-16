@@ -8,6 +8,7 @@ use App\Models\Team;
 use Filament\Widgets;
 use Filament\PanelProvider;
 use Filament\Facades\Filament;
+use App\Filament\Auth\Register;
 use Filament\Support\Colors\Color;
 use Filament\Navigation\UserMenuItem;
 use Filament\Http\Middleware\Authenticate;
@@ -34,6 +35,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->sidebarCollapsibleOnDesktop()
             ->login()
+            ->registration(Register::class)
             ->colors([
                 'danger' => Color::Rose,
                 'gray' => Color::Gray,
