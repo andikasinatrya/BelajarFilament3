@@ -15,7 +15,7 @@ class Login extends AuthLogin
         
         if(app()->environment('local')) {
             $this->form->fill([
-                'email' => 'test@example.com',
+                'email' => 'admin@gmail.com',
                 'password' => 'password',
                 'remember' => 'true',
             ]);

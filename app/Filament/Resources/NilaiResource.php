@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\NilaiResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\NilaiResource\RelationManagers;
+use Filament\Tables\Filters\SelectFilter;
 
 class NilaiResource extends Resource
 {
@@ -76,7 +77,8 @@ class NilaiResource extends Resource
 
             ])
             ->filters([
-                //
+                SelectFilter::make('category_nilai_id')
+                    ->options(CategoryNilai::pluck('name', 'id')),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
