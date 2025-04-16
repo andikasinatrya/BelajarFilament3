@@ -20,8 +20,9 @@ use App\Filament\Resources\ClassroomResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ClassroomResource\RelationManagers;
 use App\Filament\Resources\ClassroomResource\RelationManagers\SubjectsRelationManager;
+use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 
-class ClassroomResource extends Resource
+class ClassroomResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = Classroom::class;
 
@@ -108,4 +109,17 @@ class ClassroomResource extends Resource
 {
     return auth()->user()?->hasRole(['admin', 'teacher']);
 }
+
+
+public static function getPermissionPrefixes(): array
+{
+    return [
+        'view',
+        'view_any',
+        'create',
+        'update',
+        'delete',
+    ];
+}
+
 }

@@ -7,5 +7,6 @@ export default {
         './resources/views/filament/**/*.blade.php',
         './vendor/filament/**/*.blade.php',
         './resources/views/**.blade.php',
+        './vendor/awcodes/filament-table-repeater/resources/**/*.blade.php',
     ],
 }

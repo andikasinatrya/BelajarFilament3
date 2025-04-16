@@ -74,7 +74,10 @@ class AdminPanelProvider extends PanelProvider
                 'Source',
                 'Settings',
             ])
-            ->plugin(FilamentSpatieRolesPermissionsPlugin::make())
+            ->plugin(
+                // FilamentSpatieRolesPermissionsPlugin::make()
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
+                )
             ->databaseNotifications()
             // ->tenantRegistration(RegisterTeam::class)
             // ->tenant(Team::class)

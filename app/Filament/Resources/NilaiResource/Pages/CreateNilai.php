@@ -59,6 +59,7 @@ class CreateNilai extends CreateRecord
                                 ->options(CategoryNilai::all()->pluck('name', 'id'))
                                 ->columnSpan(3)
                         ])->columns(3),
+
                     Repeater::make('nilaistudents')
                         ->label('grade')
                         ->schema(fn(Get $get): array => [
